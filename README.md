@@ -1,1 +1,1 @@
-# algorithms
+# this project, conducts an empirical study to see which of the network algorithms is better than the others. Our goal in this project is to see what kinds of graphs one algorithm performs better on than the others. The following algorithms are implemented and experimented with: Ford-Fulkerson (Ch 7.1), Scaling Ford-Fulkerson (Ch 7.3), and the preflow-push algorithm (Ch. 7.4). 
