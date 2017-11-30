@@ -14,15 +14,15 @@ public class ResidualGraph {
 		this.vertexList = new LinkedList<>();
 	}
 	
-	public Iterator vertices() {
+	public Iterator<?> vertices() {
         return vertexList.iterator();
     }
 	
-	public Iterator edges() {
+	public Iterator<?> edges() {
         return edgeList.iterator();
     }
 	
-	public Iterator nextEdgeList(ResidualVertex v) {
+	public Iterator<?> nextEdgeList(ResidualVertex v) {
         return v.nextEdgeList.iterator();
     }
 	
@@ -50,7 +50,7 @@ public class ResidualGraph {
 	}
 	
 	public ResidualEdge getEdge(ResidualVertex start, ResidualVertex end) {
-		Iterator iterator = nextEdgeList(start);
+		Iterator<?> iterator = nextEdgeList(start);
 		ResidualEdge result;
 		while (iterator.hasNext()) {
 			result = (ResidualEdge) iterator.next();
