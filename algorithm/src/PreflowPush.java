@@ -1,6 +1,7 @@
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * the PreflowPush class implements the PreoflowPush algorithm
@@ -10,6 +11,7 @@ import java.util.LinkedList;
 public class PreflowPush {
 	public static ResidualGraph graph; // the remaining graph after sorting
 	public double maxFlow; // the max flow value
+	public List<Vertex> vertices = null; 
 
 	/**
 	 *
@@ -20,8 +22,42 @@ public class PreflowPush {
 	 */
 	public PreflowPush(SimpleGraph simpleGraph) {
 		graph = new ResidualGraph();
-		this.maxFlow = 0; // initial max flow value is 0
-		this.maxFlow = calculatemaxFlow(simpleGraph);
+		this.maxFlow = calculatemaxFlow(simpleGraph); //pre flow push max flow  
+		}
+	
+	/**
+	 * Calculates the max flow
+	 * 
+	 * @param simpleGraph
+	 * @return
+	 */
+	private static double calculatemaxFlow(SimpleGraph simpleGraph) {
+		ResidualVertex residualVertex;
+		addVertices(simpleGraph); //add nodes
+		addEdges(simpleGraph); // add edges 
+		LinkedList<?> vertices = graph.vertexList; //list of verticies in our new graph
+		double maxFlow = 0; 
+		while ((residualVertex = getActiveNode()) != null) {
+
+			ResidualEdge edge = findMinHeight(residualVertex);
+			if (edge != null) {
+				push(residualVertex, edge);
+			} else {
+				relabel(residualVertex);
+			}
+
+		}
+		
+		/**
+		 * add excess
+		 */
+		for (int i = 0; i < vertices.size(); i++) {
+			ResidualVertex vertex = (ResidualVertex) vertices.get(i);
+			if (vertex.getName().equalsIgnoreCase("t")) {
+				maxFlow = vertex.getExcess();
+			}
+		}
+		return maxFlow;
 	}
 	
 	/**
@@ -29,34 +65,20 @@ public class PreflowPush {
 	 * @param simpleGraph
 	 * @return
 	 */
-	private static HashMap<String, ResidualVertex> initializeResidualGraphVertex(SimpleGraph simpleGraph) {
+	private static void addVertices(SimpleGraph simpleGraph) {
 		
-		/*
-		 * grab original graphs vertices 
-		 */
-		Iterator<?> vertices = simpleGraph.vertices(); 
-		HashMap<String, ResidualVertex> vertexList = new HashMap<String, ResidualVertex>();
+		List<Vertex> vertices = simpleGraph.vertexList;
 		int numVertices = simpleGraph.numVertices();
-		
-		/*
-		 * insert them into our new graph  
-		 */
-		while (vertices.hasNext()) {
-			
-			Vertex vertex = (Vertex) vertices.next();
-			ResidualVertex residualVertex = new ResidualVertex(vertex.getName());
-			vertexList.put(String.valueOf(residualVertex.getName()), residualVertex);
-			
-			if (residualVertex.getName().equalsIgnoreCase("s")) {
-				residualVertex.setHeight(numVertices);
+
+		for (int i = 0; i < vertices.size(); i++) {
+			ResidualVertex vertex = new ResidualVertex((vertices.get(i)).getName());
+			if (vertex.getName().equalsIgnoreCase("s")) {
+				vertex.setHeight(numVertices);
 			} else {
-				residualVertex.setHeight(0);
+				vertex.setHeight(0);
 			}
-			graph.insertVertex(residualVertex);
+			graph.insertVertex(vertex);
 		}
-
-		return vertexList;
-
 	}
 	
 	/**
@@ -64,86 +86,68 @@ public class PreflowPush {
 	 * @param simpleGraph
 	 * @param vertexList
 	 */
-	private static void initializeResidualGraphEdge(SimpleGraph simpleGraph, HashMap<String, ResidualVertex> vertexList) {
-		
-		/*
-		 * grab original graphs edges  
-		 */
-		Iterator<?> edges = simpleGraph.edges();
-		
-		while (edges.hasNext()) {
-			Edge edge = (Edge) edges.next();
-			
-			Vertex v = edge.getFirstEndpoint(); //first endpoint of this edge. label the same as Ed Hong 
-			Vertex w = edge.getSecondEndpoint(); // the second endpoint of this edge. label the same as Ed Hong 
-			
-			/*
-			 * (Reference: *--*
-			 */
-			ResidualVertex endPointOne = vertexList.get(v.getName());
-			ResidualVertex endPointTwo = vertexList.get(w.getName());
-			
-			double capacity = (double) edge.getData();
-			ResidualEdge residualEdge;
-			
-			if (endPointOne.getName().equalsIgnoreCase("s")) {
-				residualEdge = new ResidualEdge(endPointTwo, endPointOne, capacity);
-				endPointTwo.setExcess(residualEdge.getCapacity());
-				graph.newVertex(endPointTwo);
-				graph.insertEdge(endPointTwo, endPointOne, residualEdge);
-			} else {
-				residualEdge = new ResidualEdge(endPointOne, endPointTwo, capacity);
-				graph.insertEdge(endPointOne, endPointTwo, residualEdge);
-			}
+	private static void addEdges(SimpleGraph simpleGraph) {
+		List<Edge> edges = simpleGraph.edgeList;
+		for (int i = 0; i < edges.size(); i++) {
+				Edge edge = edges.get(i);
+				Vertex v1 = edge.getFirstEndpoint(); //first endpoint of this edge. label the same as Ed Hong 
+				Vertex w1 = edge.getSecondEndpoint(); // the second endpoint of this edge. label the same as Ed Hong 
+				
+				Iterator<?> vertices = graph.vertices();
+				ResidualVertex v2 = null;
+				ResidualVertex w2 = null;
+				
+				while (vertices.hasNext()) {
+					ResidualVertex currVertex = (ResidualVertex) vertices.next();
+					if (currVertex.getName().equalsIgnoreCase((String) v1.getName())) {
+						v2 = currVertex;
+					}
+					if (currVertex.getName().equalsIgnoreCase((String) w1.getName())) {
+						w2 = currVertex;
+					}
+				}
+				ResidualEdge residualEdge = new ResidualEdge(v2, w2, (double) edge.getData());
+				graph.insertEdge(residualEdge, v2);
 		}
 	}
 	
 	/**
-	 * Calculates the max flow
-	 * @param simpleGraph 
-	 * @return
+	 * Returns active node
+	 * 
+	 * @return an active node
 	 */
-	private static double calculatemaxFlow(SimpleGraph simpleGraph) {
-		
-		HashMap<String, ResidualVertex> vertexList = initializeResidualGraphVertex(simpleGraph);
-		initializeResidualGraphEdge(simpleGraph, vertexList);
-		ResidualVertex residualVertex;
-		
-		while ((residualVertex = graph.getActiveNode()) != null) {
-
-			ResidualEdge e = getMinHeightAdjacentVertex(residualVertex);
-			if (e != null) {
-				push(residualVertex, e);
-			} else {
-				relabel(residualVertex);
+	private static ResidualVertex getActiveNode() {
+		Iterator<?> vertices = graph.vertices();
+		while(vertices.hasNext()) {
+			ResidualVertex vertex = (ResidualVertex) vertices.next(); 
+			if (!vertex.getName().equalsIgnoreCase("s") && !vertex.getName().equalsIgnoreCase("t") && vertex.getExcess() > 0) {
+				return vertex;
 			}
-
 		}
-
-		return graph.getExcessSink();
+		return null;
 	}
-	
+
 	/**
 	 * get the Minimum Height Adjacent to the Vertex
 	 * @param residualVertex
 	 * @return
 	 */
-	private static ResidualEdge getMinHeightAdjacentVertex(ResidualVertex residualVertex) {
+	private static ResidualEdge findMinHeight(ResidualVertex residualVertex) {
 		
 		LinkedList<ResidualEdge> edges = residualVertex.outgoingEdge;
 		ResidualVertex endpointTwo;
-		ResidualEdge fe = null;
+		ResidualEdge finalEdge = null;
 		double minHeight = residualVertex.getHeight();
 		
 		for (ResidualEdge edge : edges) {
-			ResidualEdge e = edge;
-			endpointTwo = e.getOtherEnd();
+			ResidualEdge residualEdge = edge;
+			endpointTwo = residualEdge.getOtherEnd();
 			if (minHeight > endpointTwo.getHeight()) {
 				minHeight = endpointTwo.getHeight();
-				fe = e;
+				finalEdge = residualEdge;
 			}
 		}
-		return fe;
+		return finalEdge;
 	}
 	
 	/**

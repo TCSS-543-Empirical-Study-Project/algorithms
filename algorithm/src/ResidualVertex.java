@@ -9,6 +9,8 @@ public class ResidualVertex {
 	public List<ResidualEdge> nextEdgeList; //the next connected edge of this residual vertex
 	private String name; //the name of the residual vertex
 	private boolean visited; //if this residual vertex is visited
+	private double height;
+	private double excess;
 	
 	/**
      * allows you to setup the name of the residual vertex
@@ -57,5 +59,23 @@ public class ResidualVertex {
 			}
 		}
 		return null;
+	}
+	//the following is used for pre flow push 
+
+
+	public double getHeight() {
+		return height;
+	}
+	
+	public void setHeight(double height) {
+		this.height = height;
+	}
+	
+	public double getExcess() {
+		return excess;
+	}
+
+	public void setExcess(double excess) {
+		this.excess = excess;
 	}
 }
