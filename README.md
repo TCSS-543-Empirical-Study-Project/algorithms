@@ -29,7 +29,7 @@ vertex/degree/minCapacity/maxCapacity
 
 
 ### Test Scenraio for Random graph  -- by Zelun Jiang
-#### 1. Vertex size test(./RandomTestCase/testVerticesNumber):
+#### 1. Vertex size test(./RandomtestCase/testVerticesNumber):
 vertex/density/minCapacity/maxCapacity
 - 10v-70d-25min-200max
 - 50v-70d-25min-200max
@@ -37,7 +37,7 @@ vertex/density/minCapacity/maxCapacity
 - 500v-70d-25min-200max
 - 1000v-70d-25min-200max
 
-#### 2. Density test(./RandomTestCase/testDensity):
+#### 2. Density test(./RandomtestCase/testDensity):
 vertex/density/minCapacity/maxCapacity
 - 500v-10d-25min-200max
 - 500v-30d-25min-200max
@@ -46,7 +46,7 @@ vertex/density/minCapacity/maxCapacity
 - 500v-90d-25min-200max
 
 
-#### 3. Capacity Range test(./RandomTestCase/testCapacityRange):
+#### 3. Capacity Range test(./RandomtestCase/testCapacityRange):
 vertex/density/minCapacity/maxCapacity
 - 500v-70d-1min-200max
 - 500v-70d-50min-200max
