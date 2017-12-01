@@ -26,3 +26,30 @@ vertex/degree/minCapacity/maxCapacity
 - 1000v-5o-100min-200max
 - 1000v-5o-150min-200max
 - 1000v-5o-199min-200max
+
+
+### Test Scenraio for FixedDgree graph  -- by Zelun Jiang
+#### 1. Vertex size test(./RandomTestCase/testVerticesNumber):
+vertex/density/minCapacity/maxCapacity
+- 10v-70d-25min-200max
+- 50v-70d-25min-200max
+- 100v-70d-25min-200max
+- 500v-70d-25min-200max
+- 1000v-70d-25min-200max
+
+#### 2. Density test(./RandomTestCase/testDensity):
+vertex/density/minCapacity/maxCapacity
+- 500v-10d-25min-200max
+- 500v-30d-25min-200max
+- 500v-50d-25min-200max
+- 500v-70d-25min-200max
+- 500v-90d-25min-200max
+
+
+#### 3. Capacity Range test(./RandomTestCase/testCapacityRange):
+vertex/density/minCapacity/maxCapacity
+- 500v-70d-1min-200max
+- 500v-70d-50min-200max
+- 500v-70d-100min-200max
+- 500v-70d-150min-200max
+- 500v-70d-199min-200max
