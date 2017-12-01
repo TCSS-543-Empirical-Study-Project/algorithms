@@ -28,7 +28,7 @@ vertex/degree/minCapacity/maxCapacity
 - 1000v-5o-199min-200max
 
 
-### Test Scenraio for FixedDgree graph  -- by Zelun Jiang
+### Test Scenraio for Random graph  -- by Zelun Jiang
 #### 1. Vertex size test(./RandomTestCase/testVerticesNumber):
 vertex/density/minCapacity/maxCapacity
 - 10v-70d-25min-200max
