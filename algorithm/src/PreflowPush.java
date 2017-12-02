@@ -21,7 +21,7 @@ public class PreflowPush {
 	 */
 	public PreflowPush(SimpleGraph simpleGraph) {
 		graph = new ResidualGraph();
-		this.maxFlow = calculatemaxFlow(simpleGraph); //pre flow push max flow  
+		this.maxFlow = maxFlow(simpleGraph); //pre flow push max flow  
 		}
 	
 	/**
@@ -79,12 +79,12 @@ public class PreflowPush {
 	
 	
 	/**
-	 * Calculates the max flow
+	 * Calculates the max flow of new "cut" graph
 	 * 
 	 * @param simpleGraph
 	 * @return
 	 */
-	private static double calculatemaxFlow(SimpleGraph simpleGraph) {
+	private static double maxFlow(SimpleGraph simpleGraph) {
 		ResidualVertex residualVertex;
 		addVertices(simpleGraph); //add nodes
 		addEdges(simpleGraph); // add edges 
