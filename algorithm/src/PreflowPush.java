@@ -26,41 +26,6 @@ public class PreflowPush {
 		}
 	
 	/**
-	 * Calculates the max flow
-	 * 
-	 * @param simpleGraph
-	 * @return
-	 */
-	private static double calculatemaxFlow(SimpleGraph simpleGraph) {
-		ResidualVertex residualVertex;
-		addVertices(simpleGraph); //add nodes
-		addEdges(simpleGraph); // add edges 
-		LinkedList<?> vertices = graph.vertexList; //list of verticies in our new graph
-		double maxFlow = 0; 
-		while ((residualVertex = getActiveNode()) != null) {
-
-			ResidualEdge edge = findMinHeight(residualVertex);
-			if (edge != null) {
-				push(residualVertex, edge);
-			} else {
-				relabel(residualVertex);
-			}
-
-		}
-		
-		/**
-		 * add excess
-		 */
-		for (int i = 0; i < vertices.size(); i++) {
-			ResidualVertex vertex = (ResidualVertex) vertices.get(i);
-			if (vertex.getName().equalsIgnoreCase("t")) {
-				maxFlow = vertex.getExcess();
-			}
-		}
-		return maxFlow;
-	}
-	
-	/**
 	 * Initialize the new graphs Vertexes 
 	 * @param simpleGraph
 	 * @return
@@ -111,6 +76,42 @@ public class PreflowPush {
 		}
 	}
 	
+	
+	/**
+	 * Calculates the max flow
+	 * 
+	 * @param simpleGraph
+	 * @return
+	 */
+	private static double calculatemaxFlow(SimpleGraph simpleGraph) {
+		ResidualVertex residualVertex;
+		addVertices(simpleGraph); //add nodes
+		addEdges(simpleGraph); // add edges 
+		LinkedList<?> vertices = graph.vertexList; //list of verticies in our new graph
+		double maxFlow = 0; 
+		while ((residualVertex = getActiveNode()) != null) {
+
+			ResidualEdge edge = findMinHeight(residualVertex);
+			if (edge != null) {
+				push(residualVertex, edge);
+			} else {
+				relabel(residualVertex);
+			}
+
+		}
+		
+		/**
+		 * add excess
+		 */
+		for (int i = 0; i < vertices.size(); i++) {
+			ResidualVertex vertex = (ResidualVertex) vertices.get(i);
+			if (vertex.getName().equalsIgnoreCase("t")) {
+				maxFlow = vertex.getExcess();
+			}
+		}
+		return maxFlow;
+	}
+	
 	/**
 	 * Returns active node
 	 * 
@@ -135,15 +136,15 @@ public class PreflowPush {
 	private static ResidualEdge findMinHeight(ResidualVertex residualVertex) {
 		
 		LinkedList<ResidualEdge> edges = residualVertex.outgoingEdge;
-		ResidualVertex endpointTwo;
+		ResidualVertex w2;
 		ResidualEdge finalEdge = null;
 		double minHeight = residualVertex.getHeight();
 		
 		for (ResidualEdge edge : edges) {
 			ResidualEdge residualEdge = edge;
-			endpointTwo = residualEdge.getOtherEnd();
-			if (minHeight > endpointTwo.getHeight()) {
-				minHeight = endpointTwo.getHeight();
+			w2 = residualEdge.getSecondPoint();
+			if (minHeight > w2.getHeight()) {
+				minHeight = w2.getHeight();
 				finalEdge = residualEdge;
 			}
 		}
@@ -153,36 +154,50 @@ public class PreflowPush {
 	/**
 	 * Push flow
 	 * @param residualVertex
-	 * @param forward
+	 * @param forwardEdge
 	 */
-	private static void push(ResidualVertex residualVertex, ResidualEdge forward) {
+	private static void push(ResidualVertex residualVertex, ResidualEdge forwardEdge) {
 		
-		ResidualVertex endPointTwo = forward.getOtherEnd();
+		ResidualVertex w2 = forwardEdge.getSecondPoint();
 		double excessAvailable = residualVertex.getExcess(); //
-		double canPush = forward.getCapacity();// 40
+		double canPush = forwardEdge.getCapacity();// 40
 		double pushValue = (excessAvailable < canPush) ? excessAvailable : canPush; // 
-		
+		int index = 0; 
 		if (pushValue == canPush) {
-			graph.removeEdge(forward);
+			graph.removeEdge(forwardEdge);
 		} else {
-			forward.setCapacity(forward.getCapacity() - pushValue);
-			graph.newEdge(forward);
+			forwardEdge.setCapacity(forwardEdge.getCapacity() - pushValue);
+	        int indexForward = graph.edgeList.indexOf(forwardEdge);
+	        graph.edgeList.remove(indexForward);
+	        graph.edgeList.addLast(forwardEdge);
 		}
 		
 		residualVertex.setExcess(residualVertex.getExcess() - pushValue);
-		graph.newVertex(residualVertex);
-		ResidualEdge backward = graph.getEdge(endPointTwo, residualVertex);
+		
+		/*
+		 * set new vertex
+		 * 
+		 */
+        index = graph.vertexList.indexOf(residualVertex);
+        graph.vertexList.remove(index);
+        graph.vertexList.addLast(residualVertex);
+        
+		ResidualEdge backward = graph.getEdge(w2, residualVertex);
 		
 		if (backward == null) {
-			backward = new ResidualEdge(endPointTwo, residualVertex, pushValue);
-			graph.insertEdge(endPointTwo, residualVertex, backward);
+			backward = new ResidualEdge(w2, residualVertex, pushValue);
+			graph.insertEdge(backward, w2);
 		} else {
 			backward.setCapacity(backward.getCapacity() + pushValue);
-			graph.newEdge(backward);
+	        index = graph.edgeList.indexOf(backward);
+	        graph.edgeList.remove(index);
+	        graph.edgeList.addLast(backward);
 		}
 
-		endPointTwo.setExcess(endPointTwo.getExcess() + pushValue);
-		graph.newVertex(endPointTwo);
+		w2.setExcess(w2.getExcess() + pushValue);
+        index = graph.vertexList.indexOf(w2);
+        graph.vertexList.remove(index);
+        graph.vertexList.addLast(w2);
 	}
 	
 	/**
@@ -197,7 +212,7 @@ public class PreflowPush {
 		for (int i = 0; i < outgoingEdges.size(); i++) {
 			
 			ResidualEdge residualEdge = outgoingEdges.get(i);
-			ResidualVertex endPoint = residualEdge.getOtherEnd();
+			ResidualVertex endPoint = residualEdge.getSecondPoint();
 			
 			if (minHeight > endPoint.getHeight()) {
 				minHeight = endPoint.getHeight();
@@ -205,6 +220,8 @@ public class PreflowPush {
 		}
 
 		residualVertex.setHeight(minHeight + 1);
-		graph.newVertex(residualVertex);
+        int index = graph.vertexList.indexOf(residualVertex);
+        graph.vertexList.remove(index);
+        graph.vertexList.addLast(residualVertex);
 	}
 }
