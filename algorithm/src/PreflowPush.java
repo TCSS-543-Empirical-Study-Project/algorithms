@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-
+ 
 /**
  * the PreflowPush class implements the PreoflowPush algorithm
  * 
@@ -135,7 +135,7 @@ public class PreflowPush {
 	 */
 	private static ResidualEdge findMinHeight(ResidualVertex residualVertex) {
 		
-		LinkedList<ResidualEdge> edges = residualVertex.outgoingEdge;
+		List<ResidualEdge> edges = residualVertex.nextEdgeList;
 		ResidualVertex w2;
 		ResidualEdge finalEdge = null;
 		double minHeight = residualVertex.getHeight();
@@ -200,18 +200,18 @@ public class PreflowPush {
         graph.vertexList.addLast(w2);
 	}
 	
-	/**
+	/** 
 	 * Relabel height of new graph
 	 * @param residualVertex
 	 */
 	private static void relabel(ResidualVertex residualVertex) {
 		
-		LinkedList<ResidualEdge> outgoingEdges = residualVertex.outgoingEdge;
+		List<ResidualEdge> nextEdges = residualVertex.nextEdgeList;
 		double minHeight = residualVertex.getHeight();
 		
-		for (int i = 0; i < outgoingEdges.size(); i++) {
+		for (int i = 0; i < nextEdges.size(); i++) {
 			
-			ResidualEdge residualEdge = outgoingEdges.get(i);
+			ResidualEdge residualEdge = nextEdges.get(i);
 			ResidualVertex endPoint = residualEdge.getSecondPoint();
 			
 			if (minHeight > endPoint.getHeight()) {

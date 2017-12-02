@@ -62,9 +62,11 @@ public class ResidualVertex {
 	}
 	
 	
-	//the following is used for pre flow push 
-
-
+	//the following is used for preflow push 
+	
+	/**
+	 * @author Todd Robbins
+	 */
 	public double getHeight() {
 		return height;
 	}
