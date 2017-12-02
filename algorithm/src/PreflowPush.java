@@ -1,4 +1,3 @@
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -32,6 +31,7 @@ public class PreflowPush {
 	 */
 	private static void addVertices(SimpleGraph simpleGraph) {
 		
+		@SuppressWarnings("unchecked")
 		List<Vertex> vertices = simpleGraph.vertexList;
 		int numVertices = simpleGraph.numVertices();
 
@@ -52,6 +52,7 @@ public class PreflowPush {
 	 * @param vertexList
 	 */
 	private static void addEdges(SimpleGraph simpleGraph) {
+		@SuppressWarnings("unchecked")
 		List<Edge> edges = simpleGraph.edgeList;
 		for (int i = 0; i < edges.size(); i++) {
 				Edge edge = edges.get(i);
