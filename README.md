@@ -63,7 +63,7 @@ vertex/minCapacity/maxCapacity
 - 1000v-25min-200max
 
 #### 2. Capacity Range test(./meshGraphTestCases/testCapacityRange):
-vertex/density/minCapacity/maxCapacity
+vertex/minCapacity/maxCapacity
 - 500v-1min-200max
 - 500v-50min-200max
 - 500v-100min-200max
