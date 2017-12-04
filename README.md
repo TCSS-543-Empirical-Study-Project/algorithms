@@ -18,7 +18,6 @@ vertex/degree/minCapacity/maxCapacity
 - 1000v-20o-25min-200max
 - 1000v-25o-25min-200max
 
-
 #### 3. Capacity Range test(./FixedDegree/testCapacityRange):
 vertex/degree/minCapacity/maxCapacity
 - 1000v-5o-1min-200max
@@ -45,7 +44,6 @@ vertex/density/minCapacity/maxCapacity
 - 500v-70d-25min-200max
 - 500v-90d-25min-200max
 
-
 #### 3. Capacity Range test(./RandomtestCase/testCapacityRange):
 vertex/density/minCapacity/maxCapacity
 - 500v-70d-1min-200max
@@ -53,6 +51,7 @@ vertex/density/minCapacity/maxCapacity
 - 500v-70d-100min-200max
 - 500v-70d-150min-200max
 - 500v-70d-199min-200max
+
 
 ### Test Scenario mesh graph  -- by Todd Robbins
 #### 1. Vertex size test(./meshGraphTestCases/testVerticesNumber):
@@ -62,6 +61,7 @@ vertex/minCapacity/maxCapacity
 - 100v-25min-200max
 - 500v-25min-200max
 - 1000v-25min-200max
+
 #### 2. Capacity Range test(./meshGraphTestCases/testCapacityRange):
 vertex/density/minCapacity/maxCapacity
 - 500v-1min-200max
@@ -69,4 +69,30 @@ vertex/density/minCapacity/maxCapacity
 - 500v-100min-200max
 - 500v-150min-200max
 - 500v-199min-200max
+
+
+### Test Scenario Bipartite graph  -- by Brandon Lioce
+### 1. Vertex size test(./Bipartite Test Cases/Vertex Size Test):
+vertex/probability/minCapacity/maxCapacity
+- 10v-1p-25min-200max.txt
+- 50v-1p-25min-200max.txt
+- 100v-1p-25min-200max.txt
+- 500v-1p-25min-200max.txt
+- 1000v-1p-25min-200max.txt
+	
+### 2. Probability test(./Bipartite Test Cases/Probability Test):
+vertex/probability/minCapacity/maxCapacity
+- 500v-0.2p-25min-200max.txt
+- 500v-0.4-25min-200max.txt
+- 500v-0.6p-25min-200max.txt
+- 500v-0.8p-25min-200max.txt
+- 500v-1p-25min-200max.txt
+	
+### 3. Capacity Range test(./Bipartite Test Cases/Capacity Range Test):
+vertex/density/minCapacity/maxCapacity
+- 500v-1p-1min-200max.txt
+- 500v-1p-50min-200max.txt
+- 500v-1p-100min-200max.txt
+- 500v-1p-150min-200max.txt
+- 500v-1p-199min-200max.txt
 
