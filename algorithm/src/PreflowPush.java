@@ -105,7 +105,7 @@ public class PreflowPush {
 		addEdges(simpleGraph, vertexList); // add edges 
 		LinkedList<?> vertices = graph.vertexList; //list of verticies in our new graph
 		double maxFlow = 0; 
-		while ((residualVertex = getActiveNode()) != null) {
+		while ((residualVertex = getAvailableNode()) != null) {
 
 			ResidualEdge edge = findMinHeight(residualVertex);
 			if (edge != null) {
@@ -133,7 +133,7 @@ public class PreflowPush {
 	 * 
 	 * @return an active node
 	 */
-	private ResidualVertex getActiveNode() {
+	private ResidualVertex getAvailableNode() {
 		Iterator<?> vertices = graph.vertices();
 		while(vertices.hasNext()) {
 			ResidualVertex vertex = (ResidualVertex) vertices.next(); 
