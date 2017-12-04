@@ -5,8 +5,10 @@
  * Apaporn Boonyaratta, Richard Hill, Quang Lu, & David Thaler
  * November 21, 2008
  */
-import java.io.FileNotFoundException;
-import java.io.PrintStream;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Random;
 
 /**
@@ -38,137 +40,114 @@ import java.util.Random;
  */
 public class MeshGenerator {
 
-  /** The number of rows */
-  private int m;
-  /** The number of columns */
-  private int n;
-  /** The capacity limit, if random, or the capacity of each edge, if fixed. */
-  private int c;
-  /** The output location, either a file or System.out. */
-  private PrintStream out;
-  /** The random number generator */
-  private Random rand;
-  /** True if the edge capacities are constant. */
-  private boolean constCap;
+	/** The number of rows */
+	private static int rows;
+	/** The number of columns */
+	private static int columns;
+	/** The minimum capacity */
+	private static int minCap;
+	/** The capacity limit, if random, or the capacity of each edge, if fixed. */
+	private static int maxCap;
+	/** The output location, either a file or System.out. */
+	private static PrintWriter out;
+	/** The random number generator */
+	private static Random rand;
+	/** The user directory. */
+	private static String directory;
+	/** The file out name. */
+	private static String fileName;
 
-  /**
-   * The run method.
-   */
-  public void generate() {
+	/**
+	 * The run method.
+	 */
+	public void generate() {
 
-    // the s to first column links
-    for (int i = 1; i <= m; i++) {
-      out.printf("s (%d,1) %d\n", i, capacity());
-    }
+		// the s to first column links
+		for (int i = 1; i <= rows; i++) {
+			out.printf("s (%d,1) %d\n", i, capacity());
+		}
 
-    // left to right links across the rows
-    for (int j = 1; j <= n - 1; j++) {
-      for (int i = 1; i <= m; i++) {
-        line(i, j, i, j + 1, capacity());
-      }
-    }
+		// left to right links across the rows
+		for (int j = 1; j <= columns - 1; j++) {
+			for (int i = 1; i <= rows; i++) {
+				line(i, j, i, j + 1, capacity());
+			}
+		}
 
-    // two-way top to bottom links on the columns
-    for (int j = 1; j <= n; j++) {
-      for (int i = 1; i <= m - 1; i++) {
-        line(i, j, i + 1, j, capacity());
-        line(i + 1, j, i, j, capacity());
-      }
-    }
+		// two-way top to bottom links on the columns
+		for (int j = 1; j <= columns; j++) {
+			for (int i = 1; i <= rows - 1; i++) {
+				line(i, j, i + 1, j, capacity());
+				line(i + 1, j, i, j, capacity());
+			}
+		}
 
-    // last column to t links
-    for (int i = 1; i <= m; i++) {
-      out.printf("(%d,%d) t %d\n", i, n, capacity());
-    }
-  }
+		// last column to t links
+		for (int i = 1; i <= rows; i++) {
+			out.printf("(%d,%d) t %d\n", i, columns, capacity());
+			//System.out.println("(%d,%d) t %d\n", i, columns, capacity());
+		}
+		
+		System.out.println("\n\nOutput is created at: \t" + directory + "\\" + fileName);
+		out.close();
+	}
 
-  /**
-   * Utility method to generate one line of output at an interior node in the
-   * graph. The line reads 'first node' 'second node' capacity , where the nodes
-   * are represented as (row #, column #). This method should be called with the
-   * correct capacity for this node; it doesn't generate them.
-   * 
-   * @param i1 -
-   *          first node row #
-   * @param j1-
-   *          first node column #
-   * @param i2-
-   *          second node row #
-   * @param j2-
-   *          second node column #
-   * @param cap -
-   *          the capacity entry
-   */
-  private void line(int i1, int j1, int i2, int j2, int cap) {
-    out.printf("(%d,%d) (%d,%d) %d\n", i1, j1, i2, j2, cap);
-  }
+	/**
+	 * Utility method to generate one line of output at an interior node in the
+	 * graph. The line reads 'first node' 'second node' capacity , where the nodes
+	 * are represented as (row #, column #). This method should be called with the
+	 * correct capacity for this node; it doesn't generate them.
+	 * 
+	 * @param i1 -
+	 *          first node row #
+	 * @param j1-
+	 *          first node column #
+	 * @param i2-
+	 *          second node row #
+	 * @param j2-
+	 *          second node column #
+	 * @param cap -
+	 *          the capacity entry
+	 */
+	private void line(int i1, int j1, int i2, int j2, int cap) {
+		out.printf("(%d,%d) (%d,%d) %d\n", i1, j1, i2, j2, cap);
+	}
 
-  /**
-   * Utility method to generate edge capacities for mesh graph generator. These
-   * are constant with value c if the constCap flag is set, random on the range
-   * from 1 to c otherwise.
-   * 
-   * @return either c or a random number from 1 to c
-   */
-  private int capacity() {
-    if (constCap) {
-      return c;
-    }
-    // rand(c)+1 so that we can get 1 to Cmax as values.
-    return rand.nextInt(c) + 1;
-  }
+	/**
+	 * Utility method to generate edge capacities for mesh graph generator. These
+	 * are constant with value c if the constCap flag is set, random on the range
+	 * from 1 to c otherwise.
+	 * 
+	 * @return Capacity between minCap and maxCap.
+	 */
+	private int capacity() {
+		return rand.nextInt(maxCap) + minCap;
+	}
 
-  /**
-   * Constructor for mesh generator parses the command line arguments and sets
-   * the defaults. See the class comment for arguments/defaults.
-   * 
-   * @param args -
-   *          the command line arguments. See class comment.
-   */
-  public MeshGenerator(String[] args) {
-    rand = new Random();
-    // the constant capacity flag
-    if (args.length == 5 && args[4].equals("-cc")) {
-      constCap = true;
-    }
-    // where to write the output
-    if (args.length >= 4 && !args[3].equals("-cc")) {
-      try {
-        out = new PrintStream(args[3]);
-      } catch (FileNotFoundException e) {
-        System.err.println("Exception thrown on file formation: " + args[3]);
-      }
-    } else {
-      out = System.out;
-    }
-    if (args.length == 4 && args[3].equals("-cc")) {
-      constCap = true;
-    }
-    // set the capacity, it defaults to 1.
-    if (args.length >= 3) {
-      c = Integer.parseInt(args[2]);
-    } else {
-      constCap = true;
-      c = 1;
-    }
-    // m is the rows, n the colums, 3 rows by 4 col is the default
-    if (args.length >= 2) {
-      n = Integer.parseInt(args[1]);
-      m = Integer.parseInt(args[0]);
-    } else {
-      n = 4;
-      m = 3;
-    }
-  }
-
-  /**
-   * @param args-
-   *          command line args
-   */
-  public static void main(String[] args) {
-
-    MeshGenerator mesh = new MeshGenerator(args);
-    mesh.generate();
-  }
-
+	/**
+	 * @throws IOException 
+	 */
+	public static void main(String[] args) throws IOException {
+		System.out.print("Enter number of rows: ");
+		rows = BipartiteGraph.GetInt();
+		
+		System.out.print("Enter number of columns: ");
+		columns = BipartiteGraph.GetInt();
+		
+		System.out.print("Enter minimum edge capacity: ");
+		minCap = BipartiteGraph.GetInt();
+		
+		System.out.print("Enter maximum edge capacity: ");
+		maxCap = BipartiteGraph.GetInt();
+		
+		System.out.print("Enter a name for the file (do not type \".txt\"): ");
+		fileName = BipartiteGraph.GetString();
+		
+		directory = System.getProperty("user.dir");
+		out = new  PrintWriter(new FileWriter(new File(directory, fileName)));
+		
+		MeshGenerator mesh = new MeshGenerator();
+		rand = new Random();
+		mesh.generate();
+	}
 }
