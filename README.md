@@ -72,7 +72,7 @@ vertex/density/minCapacity/maxCapacity
 
 
 ### Test Scenario Bipartite graph  -- by Brandon Lioce
-### 1. Vertex size test(./Bipartite Test Cases/Vertex Size Test):
+### 1. Vertex size test(./BipartiteTestCases/VertexSizeTest):
 vertex/probability/minCapacity/maxCapacity
 - 10v-1p-25min-200max.txt
 - 50v-1p-25min-200max.txt
@@ -80,7 +80,7 @@ vertex/probability/minCapacity/maxCapacity
 - 500v-1p-25min-200max.txt
 - 1000v-1p-25min-200max.txt
 	
-### 2. Probability test(./Bipartite Test Cases/Probability Test):
+### 2. Probability test(./BipartiteTestCases/ProbabilityTest):
 vertex/probability/minCapacity/maxCapacity
 - 500v-0.2p-25min-200max.txt
 - 500v-0.4-25min-200max.txt
@@ -88,7 +88,7 @@ vertex/probability/minCapacity/maxCapacity
 - 500v-0.8p-25min-200max.txt
 - 500v-1p-25min-200max.txt
 	
-### 3. Capacity Range test(./Bipartite Test Cases/Capacity Range Test):
+### 3. Capacity Range test(./BipartiteTestCases/CapacityRangeTest):
 vertex/density/minCapacity/maxCapacity
 - 500v-1p-1min-200max.txt
 - 500v-1p-50min-200max.txt
