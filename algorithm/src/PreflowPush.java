@@ -27,70 +27,62 @@ public class PreflowPush {
 		}
 	
 	/**
-	 * Initialize the new graphs Vertexes 
+	 * Initialize the new graphs Vertexes
+	 * 
 	 * @param simpleGraph
-	 * @return 
+	 * @return
 	 * @return
 	 */
 	private HashMap<String, ResidualVertex> addVertices(SimpleGraph simpleGraph) {
-		
-        Iterator<?> vertices = simpleGraph.vertices();
-        HashMap<String,ResidualVertex> vertexList = new HashMap<String,ResidualVertex>();
-        int noOfVertices = simpleGraph.numVertices();
-        while(vertices.hasNext())
-        {
-            Vertex v = (Vertex) vertices.next();
-            ResidualVertex rv = new ResidualVertex(v.getName());
-            vertexList.put(String.valueOf(rv.getName()), rv);
-            if(rv.getName().equalsIgnoreCase("s"))
-            {
-                
-                rv.setHeight(noOfVertices);
-            }
-            else
-            {
-                rv.setHeight(0);
-            }
-            graph.insertVertex(rv);
-        }
-        
-        return vertexList;
+
+		Iterator<?> vertices = simpleGraph.vertices();
+		HashMap<String, ResidualVertex> vertexList = new HashMap<String, ResidualVertex>();
+		int noOfVertices = simpleGraph.numVertices();
+		while (vertices.hasNext()) {
+			Vertex v = (Vertex) vertices.next();
+			ResidualVertex rv = new ResidualVertex(v.getName());
+			vertexList.put(String.valueOf(rv.getName()), rv);
+			if (rv.getName().equalsIgnoreCase("s")) {
+
+				rv.setHeight(noOfVertices);
+			} else {
+				rv.setHeight(0);
+			}
+			graph.insertVertex(rv);
+		}
+
+		return vertexList;
 	}
-	
-	
-	
+
 	/**
-	 * Initialize the new graphs Edges 
+	 * Initialize the new graphs Edges
+	 * 
 	 * @param simpleGraph
 	 * @param vertexList
 	 */
-	   private static void addEdges(SimpleGraph g,HashMap<String,ResidualVertex> vertexList){
-	        Iterator<?> edges = g.edges();
-	        while(edges.hasNext())
-	        {
-	            Edge e = (Edge) edges.next();
-	            Vertex v = e.getFirstEndpoint();
-	            Vertex w = e.getSecondEndpoint();
-	            ResidualVertex rv = vertexList.get(v.getName());
-	            ResidualVertex rw = vertexList.get(w.getName());
-	            double edgeCapacity = (double) e.getData();
-	            ResidualEdge edge;
-	            if(rv.getName().equalsIgnoreCase("s"))
-	            {
-	                edge = new ResidualEdge(rw, rv, edgeCapacity);
-	                rw.setExcess(edge.getCapacity());
-	                int index = graph.vertexList.indexOf(rw);
-	                graph.vertexList.remove(index);
-	                graph.vertexList.addLast(rw);
-	                graph.insertEdge(edge, rw);
-	            }
-	            else
-	            {
-	                edge = new ResidualEdge(rv, rw, edgeCapacity);
-	                graph.insertEdge(edge, rv);
-	            }
-	        }
-	    }
+	private static void addEdges(SimpleGraph g, HashMap<String, ResidualVertex> vertexList) {
+		Iterator<?> edges = g.edges();
+		while (edges.hasNext()) {
+			Edge e = (Edge) edges.next();
+			Vertex v = e.getFirstEndpoint();
+			Vertex w = e.getSecondEndpoint();
+			ResidualVertex rv = vertexList.get(v.getName());
+			ResidualVertex rw = vertexList.get(w.getName());
+			double edgeCapacity = (double) e.getData();
+			ResidualEdge edge;
+			if (rv.getName().equalsIgnoreCase("s")) {
+				edge = new ResidualEdge(rw, rv, edgeCapacity);
+				rw.setExcess(edge.getCapacity());
+				int index = graph.vertexList.indexOf(rw);
+				graph.vertexList.remove(index);
+				graph.vertexList.addLast(rw);
+				graph.insertEdge(edge, rw);
+			} else {
+				edge = new ResidualEdge(rv, rw, edgeCapacity);
+				graph.insertEdge(edge, rv);
+			}
+		}
+	}
 	
 	
 	/**
