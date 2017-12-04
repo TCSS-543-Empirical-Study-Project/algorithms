@@ -89,7 +89,7 @@ vertex/probability/minCapacity/maxCapacity
 - 500v-1p-25min-200max.txt
 	
 ### 3. Capacity Range test(./BipartiteTestCases/CapacityRangeTest):
-vertex/density/minCapacity/maxCapacity
+vertex/probability/minCapacity/maxCapacity
 - 500v-1p-1min-200max.txt
 - 500v-1p-50min-200max.txt
 - 500v-1p-100min-200max.txt
