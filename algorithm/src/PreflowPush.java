@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -28,59 +29,68 @@ public class PreflowPush {
 	/**
 	 * Initialize the new graphs Vertexes 
 	 * @param simpleGraph
+	 * @return 
 	 * @return
 	 */
-	private void addVertices(SimpleGraph simpleGraph) {
+	private HashMap<String, ResidualVertex> addVertices(SimpleGraph simpleGraph) {
 		
-		@SuppressWarnings("unchecked")
-		List<Vertex> vertices = simpleGraph.vertexList;
-		int numVertices = simpleGraph.numVertices();
-
-		for (int i = 0; i < vertices.size(); i++) {
-			ResidualVertex vertex = new ResidualVertex((vertices.get(i)).getName());
-			if (vertex.getName().equalsIgnoreCase("s")) {
-				vertex.setHeight(numVertices);
-			} else {
-				vertex.setHeight(0);
-			}
-			graph.insertVertex(vertex);
-		}
+        Iterator<?> vertices = simpleGraph.vertices();
+        HashMap<String,ResidualVertex> vertexList = new HashMap<String,ResidualVertex>();
+        int noOfVertices = simpleGraph.numVertices();
+        while(vertices.hasNext())
+        {
+            Vertex v = (Vertex) vertices.next();
+            ResidualVertex rv = new ResidualVertex(v.getName());
+            vertexList.put(String.valueOf(rv.getName()), rv);
+            if(rv.getName().equalsIgnoreCase("s"))
+            {
+                
+                rv.setHeight(noOfVertices);
+            }
+            else
+            {
+                rv.setHeight(0);
+            }
+            graph.insertVertex(rv);
+        }
+        
+        return vertexList;
 	}
+	
+	
 	
 	/**
 	 * Initialize the new graphs Edges 
 	 * @param simpleGraph
 	 * @param vertexList
 	 */
-	private void addEdges(SimpleGraph simpleGraph) {
-		@SuppressWarnings("unchecked")
-		List<Edge> edges = simpleGraph.edgeList;
-		for (int i = 0; i < edges.size(); i++) {
-				Edge edge = edges.get(i);
-				Vertex v1 = edge.getFirstEndpoint(); //first endpoint of this edge. label the same as Ed Hong 
-				Vertex w1 = edge.getSecondEndpoint(); // the second endpoint of this edge. label the same as Ed Hong 
-				
-				Iterator<?> vertices = graph.vertices();
-				ResidualVertex v2 = null;
-				ResidualVertex w2 = null;
-				
-				while (vertices.hasNext()) {
-					ResidualVertex currVertex = (ResidualVertex) vertices.next();
-					if (currVertex.getName().equalsIgnoreCase((String) v1.getName())) {
-						v2 = currVertex;
-					}
-					if (currVertex.getName().equalsIgnoreCase((String) w1.getName())) {
-						w2 = currVertex;
-					}
-				}
-				ResidualEdge residualEdge = new ResidualEdge(v2, w2, (double) edge.getData());
-				v2.setExcess(residualEdge.getCapacity());
-		        int index = graph.vertexList.indexOf(v2);
-		        graph.vertexList.remove(index);
-		        graph.vertexList.addLast(v2);
-				graph.insertEdge(residualEdge, v2);
-		}
-	}
+	   private static void addEdges(SimpleGraph g,HashMap<String,ResidualVertex> vertexList){
+	        Iterator<?> edges = g.edges();
+	        while(edges.hasNext())
+	        {
+	            Edge e = (Edge) edges.next();
+	            Vertex v = e.getFirstEndpoint();
+	            Vertex w = e.getSecondEndpoint();
+	            ResidualVertex rv = vertexList.get(v.getName());
+	            ResidualVertex rw = vertexList.get(w.getName());
+	            double edgeCapacity = (double) e.getData();
+	            ResidualEdge edge;
+	            if(rv.getName().equalsIgnoreCase("s"))
+	            {
+	                edge = new ResidualEdge(rw, rv, edgeCapacity);
+	                rw.setExcess(edge.getCapacity());
+	                int index = graph.vertexList.indexOf(rw);
+	                graph.vertexList.remove(index);
+	                graph.vertexList.addLast(rw);
+	                graph.insertEdge(edge, rw);
+	            }
+	            else
+	            {
+	                edge = new ResidualEdge(rv, rw, edgeCapacity);
+	                graph.insertEdge(edge, rv);
+	            }
+	        }
+	    }
 	
 	
 	/**
@@ -91,8 +101,8 @@ public class PreflowPush {
 	 */
 	public double maxFlow() {
 		ResidualVertex residualVertex;
-		addVertices(simpleGraph); //add nodes
-		addEdges(simpleGraph); // add edges 
+		HashMap<String,ResidualVertex> vertexList=addVertices(simpleGraph); //add nodes
+		addEdges(simpleGraph, vertexList); // add edges 
 		LinkedList<?> vertices = graph.vertexList; //list of verticies in our new graph
 		double maxFlow = 0; 
 		while ((residualVertex = getActiveNode()) != null) {
