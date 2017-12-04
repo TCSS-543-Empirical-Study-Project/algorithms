@@ -107,7 +107,7 @@ public class PreflowPush {
 		double maxFlow = 0; 
 		while ((residualVertex = getAvailableNode()) != null) {
 
-			ResidualEdge edge = findMinHeight(residualVertex);
+			ResidualEdge edge = findMinHeight(residualVertex); // unused node. 
 			if (edge != null) {
 				push(residualVertex, edge);
 			} else {
