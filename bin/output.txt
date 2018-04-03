@@ -1,0 +1,717 @@
+Test three algorithms for 5 times based on testcases we created
+-----------------------------------------------------------
+.\src\Bipartite\testCapacityRange\50m-50m-0.5p-100min-200max.txt
+Opened .\src\Bipartite\testCapacityRange\50m-50m-0.5p-100min-200max.txt for input.
+Successfully loaded 1337 lines. 
+----------------************test for.\src\Bipartite\testCapacityRange\50m-50m-0.5p-100min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 7614.0
+Ford Fulkerson Algorithm: Running time: 2906 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 7614.0
+Scaling Ford Fulkerson Algorithm: Running time: 439 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 7614.0
+Preflow Push Algorithm: Running time: 1053 millisecond
+.\src\Bipartite\testCapacityRange\50m-50m-0.5p-150min-200max.txt
+Opened .\src\Bipartite\testCapacityRange\50m-50m-0.5p-150min-200max.txt for input.
+Successfully loaded 1330 lines. 
+----------------************test for.\src\Bipartite\testCapacityRange\50m-50m-0.5p-150min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 8697.0
+Ford Fulkerson Algorithm: Running time: 3198 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 8697.0
+Scaling Ford Fulkerson Algorithm: Running time: 3407 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 8697.0
+Preflow Push Algorithm: Running time: 1028 millisecond
+.\src\Bipartite\testCapacityRange\50m-50m-0.5p-199min-200max.txt
+Opened .\src\Bipartite\testCapacityRange\50m-50m-0.5p-199min-200max.txt for input.
+Successfully loaded 1344 lines. 
+----------------************test for.\src\Bipartite\testCapacityRange\50m-50m-0.5p-199min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 9976.0
+Ford Fulkerson Algorithm: Running time: 1827 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 9976.0
+Scaling Ford Fulkerson Algorithm: Running time: 1829 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 9976.0
+Preflow Push Algorithm: Running time: 688 millisecond
+.\src\Bipartite\testCapacityRange\50m-50m-0.5p-1min-200max.txt
+Opened .\src\Bipartite\testCapacityRange\50m-50m-0.5p-1min-200max.txt for input.
+Successfully loaded 1319 lines. 
+----------------************test for.\src\Bipartite\testCapacityRange\50m-50m-0.5p-1min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 5933.0
+Ford Fulkerson Algorithm: Running time: 2239 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 5933.0
+Scaling Ford Fulkerson Algorithm: Running time: 750 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 5933.0
+Preflow Push Algorithm: Running time: 1388 millisecond
+.\src\Bipartite\testCapacityRange\50m-50m-0.5p-50min-200max.txt
+Opened .\src\Bipartite\testCapacityRange\50m-50m-0.5p-50min-200max.txt for input.
+Successfully loaded 1359 lines. 
+----------------************test for.\src\Bipartite\testCapacityRange\50m-50m-0.5p-50min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 6000.0
+Ford Fulkerson Algorithm: Running time: 1796 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 6000.0
+Scaling Ford Fulkerson Algorithm: Running time: 677 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 6000.0
+Preflow Push Algorithm: Running time: 1371 millisecond
+.\src\Bipartite\testProbability\50n-50m-0.1p-25min-200max.txt
+Opened .\src\Bipartite\testProbability\50n-50m-0.1p-25min-200max.txt for input.
+Successfully loaded 361 lines. 
+----------------************test for.\src\Bipartite\testProbability\50n-50m-0.1p-25min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 4994.0
+Ford Fulkerson Algorithm: Running time: 6 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 4994.0
+Scaling Ford Fulkerson Algorithm: Running time: 13 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 4994.0
+Preflow Push Algorithm: Running time: 50 millisecond
+.\src\Bipartite\testProbability\50n-50m-0.3p-25min-200max.txt
+Opened .\src\Bipartite\testProbability\50n-50m-0.3p-25min-200max.txt for input.
+Successfully loaded 850 lines. 
+----------------************test for.\src\Bipartite\testProbability\50n-50m-0.3p-25min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 5443.0
+Ford Fulkerson Algorithm: Running time: 325 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 5443.0
+Scaling Ford Fulkerson Algorithm: Running time: 102 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 5443.0
+Preflow Push Algorithm: Running time: 551 millisecond
+.\src\Bipartite\testProbability\50n-50m-0.5p-25min-200max.txt
+Opened .\src\Bipartite\testProbability\50n-50m-0.5p-25min-200max.txt for input.
+Successfully loaded 1339 lines. 
+----------------************test for.\src\Bipartite\testProbability\50n-50m-0.5p-25min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 5206.0
+Ford Fulkerson Algorithm: Running time: 934 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 5206.0
+Scaling Ford Fulkerson Algorithm: Running time: 132 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 5206.0
+Preflow Push Algorithm: Running time: 33 millisecond
+.\src\Bipartite\testProbability\50n-50m-0.7p-25min-200max.txt
+Opened .\src\Bipartite\testProbability\50n-50m-0.7p-25min-200max.txt for input.
+Successfully loaded 1847 lines. 
+----------------************test for.\src\Bipartite\testProbability\50n-50m-0.7p-25min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 5882.0
+Ford Fulkerson Algorithm: Running time: 3541 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 5882.0
+Scaling Ford Fulkerson Algorithm: Running time: 278 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 5882.0
+Preflow Push Algorithm: Running time: 2154 millisecond
+.\src\Bipartite\testProbability\50n-50m-0.9p-25min-200max.txt
+Opened .\src\Bipartite\testProbability\50n-50m-0.9p-25min-200max.txt for input.
+Successfully loaded 2354 lines. 
+----------------************test for.\src\Bipartite\testProbability\50n-50m-0.9p-25min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 4673.0
+Ford Fulkerson Algorithm: Running time: 3530 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 4673.0
+Scaling Ford Fulkerson Algorithm: Running time: 991 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 4673.0
+Preflow Push Algorithm: Running time: 74 millisecond
+.\src\Bipartite\testVerticesNumber\125n-125m-0.2p-25min-200max.txt
+Opened .\src\Bipartite\testVerticesNumber\125n-125m-0.2p-25min-200max.txt for input.
+Successfully loaded 3358 lines. 
+----------------************test for.\src\Bipartite\testVerticesNumber\125n-125m-0.2p-25min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 13157.0
+Ford Fulkerson Algorithm: Running time: 12553 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 13157.0
+Scaling Ford Fulkerson Algorithm: Running time: 3416 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 13157.0
+Preflow Push Algorithm: Running time: 268 millisecond
+.\src\Bipartite\testVerticesNumber\25n-25m-0.2p-25min-200max.txt
+Opened .\src\Bipartite\testVerticesNumber\25n-25m-0.2p-25min-200max.txt for input.
+Successfully loaded 176 lines. 
+----------------************test for.\src\Bipartite\testVerticesNumber\25n-25m-0.2p-25min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 2459.0
+Ford Fulkerson Algorithm: Running time: 2 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 2459.0
+Scaling Ford Fulkerson Algorithm: Running time: 2 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 2459.0
+Preflow Push Algorithm: Running time: 3 millisecond
+.\src\Bipartite\testVerticesNumber\50n-50m-0.2p-25min-200max.txt
+Opened .\src\Bipartite\testVerticesNumber\50n-50m-0.2p-25min-200max.txt for input.
+Successfully loaded 624 lines. 
+----------------************test for.\src\Bipartite\testVerticesNumber\50n-50m-0.2p-25min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 5420.0
+Ford Fulkerson Algorithm: Running time: 101 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 5420.0
+Scaling Ford Fulkerson Algorithm: Running time: 86 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 5420.0
+Preflow Push Algorithm: Running time: 504 millisecond
+.\src\Bipartite\testVerticesNumber\5n-5m-0.2p-25min-200max.txt
+Opened .\src\Bipartite\testVerticesNumber\5n-5m-0.2p-25min-200max.txt for input.
+Successfully loaded 16 lines. 
+----------------************test for.\src\Bipartite\testVerticesNumber\5n-5m-0.2p-25min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 172.0
+Ford Fulkerson Algorithm: Running time: 0 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 172.0
+Scaling Ford Fulkerson Algorithm: Running time: 0 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 172.0
+Preflow Push Algorithm: Running time: 0 millisecond
+.\src\Bipartite\testVerticesNumber\75n-75m-0.2p-25min-200max.txt
+Opened .\src\Bipartite\testVerticesNumber\75n-75m-0.2p-25min-200max.txt for input.
+Successfully loaded 1259 lines. 
+----------------************test for.\src\Bipartite\testVerticesNumber\75n-75m-0.2p-25min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 7881.0
+Ford Fulkerson Algorithm: Running time: 366 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 7881.0
+Scaling Ford Fulkerson Algorithm: Running time: 196 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 7881.0
+Preflow Push Algorithm: Running time: 54 millisecond
+.\src\FixedDegree\testCapacityRange\500v-5o-100min-200max
+Opened .\src\FixedDegree\testCapacityRange\500v-5o-100min-200max for input.
+Successfully loaded 2510 lines. 
+----------------************test for.\src\FixedDegree\testCapacityRange\500v-5o-100min-200max************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 773.0
+Ford Fulkerson Algorithm: Running time: 2418 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 773.0
+Scaling Ford Fulkerson Algorithm: Running time: 4930 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 773.0
+Preflow Push Algorithm: Running time: 306 millisecond
+.\src\FixedDegree\testCapacityRange\500v-5o-150min-200max
+Opened .\src\FixedDegree\testCapacityRange\500v-5o-150min-200max for input.
+Successfully loaded 2510 lines. 
+----------------************test for.\src\FixedDegree\testCapacityRange\500v-5o-150min-200max************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 904.0
+Ford Fulkerson Algorithm: Running time: 6047 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 904.0
+Scaling Ford Fulkerson Algorithm: Running time: 6383 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 904.0
+Preflow Push Algorithm: Running time: 41539 millisecond
+.\src\FixedDegree\testCapacityRange\500v-5o-199min-200max
+Opened .\src\FixedDegree\testCapacityRange\500v-5o-199min-200max for input.
+Successfully loaded 2510 lines. 
+----------------************test for.\src\FixedDegree\testCapacityRange\500v-5o-199min-200max************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 799.0
+Ford Fulkerson Algorithm: Running time: 229 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 799.0
+Scaling Ford Fulkerson Algorithm: Running time: 272 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 799.0
+Preflow Push Algorithm: Running time: 41965 millisecond
+.\src\FixedDegree\testCapacityRange\500v-5o-1min-200max
+Opened .\src\FixedDegree\testCapacityRange\500v-5o-1min-200max for input.
+Successfully loaded 2510 lines. 
+----------------************test for.\src\FixedDegree\testCapacityRange\500v-5o-1min-200max************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 441.0
+Ford Fulkerson Algorithm: Running time: 1223 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 441.0
+Scaling Ford Fulkerson Algorithm: Running time: 441 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 441.0
+Preflow Push Algorithm: Running time: 243 millisecond
+.\src\FixedDegree\testCapacityRange\500v-5o-50min-200max
+Opened .\src\FixedDegree\testCapacityRange\500v-5o-50min-200max for input.
+Successfully loaded 2510 lines. 
+----------------************test for.\src\FixedDegree\testCapacityRange\500v-5o-50min-200max************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 470.0
+Ford Fulkerson Algorithm: Running time: 2049 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 470.0
+Scaling Ford Fulkerson Algorithm: Running time: 2596 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 470.0
+Preflow Push Algorithm: Running time: 39787 millisecond
+.\src\FixedDegree\testOutEdgeNumber\500v-10o-25min-200max
+Opened .\src\FixedDegree\testOutEdgeNumber\500v-10o-25min-200max for input.
+Successfully loaded 5020 lines. 
+----------------************test for.\src\FixedDegree\testOutEdgeNumber\500v-10o-25min-200max************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 987.0
+Ford Fulkerson Algorithm: Running time: 6074 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 987.0
+Scaling Ford Fulkerson Algorithm: Running time: 8923 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 987.0
+Preflow Push Algorithm: Running time: 74715 millisecond
+.\src\FixedDegree\testOutEdgeNumber\500v-2o-25min-200max
+Opened .\src\FixedDegree\testOutEdgeNumber\500v-2o-25min-200max for input.
+Successfully loaded 1004 lines. 
+----------------************test for.\src\FixedDegree\testOutEdgeNumber\500v-2o-25min-200max************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 82.0
+Ford Fulkerson Algorithm: Running time: 57 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 82.0
+Scaling Ford Fulkerson Algorithm: Running time: 27 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 82.0
+Preflow Push Algorithm: Running time: 17464 millisecond
+.\src\FixedDegree\testOutEdgeNumber\500v-4o-25min-200max
+Opened .\src\FixedDegree\testOutEdgeNumber\500v-4o-25min-200max for input.
+Successfully loaded 2008 lines. 
+----------------************test for.\src\FixedDegree\testOutEdgeNumber\500v-4o-25min-200max************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 429.0
+Ford Fulkerson Algorithm: Running time: 2618 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 429.0
+Scaling Ford Fulkerson Algorithm: Running time: 1364 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 429.0
+Preflow Push Algorithm: Running time: 34218 millisecond
+.\src\FixedDegree\testOutEdgeNumber\500v-6o-25min-200max
+Opened .\src\FixedDegree\testOutEdgeNumber\500v-6o-25min-200max for input.
+Successfully loaded 3012 lines. 
+----------------************test for.\src\FixedDegree\testOutEdgeNumber\500v-6o-25min-200max************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 614.0
+Ford Fulkerson Algorithm: Running time: 802 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 614.0
+Scaling Ford Fulkerson Algorithm: Running time: 994 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 614.0
+Preflow Push Algorithm: Running time: 205 millisecond
+.\src\FixedDegree\testOutEdgeNumber\500v-8o-25min-200max
+Opened .\src\FixedDegree\testOutEdgeNumber\500v-8o-25min-200max for input.
+Successfully loaded 4016 lines. 
+----------------************test for.\src\FixedDegree\testOutEdgeNumber\500v-8o-25min-200max************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 809.0
+Ford Fulkerson Algorithm: Running time: 4412 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 809.0
+Scaling Ford Fulkerson Algorithm: Running time: 8673 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 809.0
+Preflow Push Algorithm: Running time: 61510 millisecond
+.\src\FixedDegree\testVertexNumber\1000v-5o-25min-200max.txt
+Opened .\src\FixedDegree\testVertexNumber\1000v-5o-25min-200max.txt for input.
+Successfully loaded 5010 lines. 
+----------------************test for.\src\FixedDegree\testVertexNumber\1000v-5o-25min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 599.0
+Ford Fulkerson Algorithm: Running time: 13110 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 599.0
+Scaling Ford Fulkerson Algorithm: Running time: 11186 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 599.0
+Preflow Push Algorithm: Running time: 1211 millisecond
+.\src\FixedDegree\testVertexNumber\100v-5o-25min-200max.txt
+Opened .\src\FixedDegree\testVertexNumber\100v-5o-25min-200max.txt for input.
+Successfully loaded 510 lines. 
+----------------************test for.\src\FixedDegree\testVertexNumber\100v-5o-25min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 418.0
+Ford Fulkerson Algorithm: Running time: 16 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 238.0
+Scaling Ford Fulkerson Algorithm: Running time: 2 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 418.0
+Preflow Push Algorithm: Running time: 466 millisecond
+.\src\FixedDegree\testVertexNumber\10v-5o-25min-200max.txt
+Opened .\src\FixedDegree\testVertexNumber\10v-5o-25min-200max.txt for input.
+Successfully loaded 60 lines. 
+----------------************test for.\src\FixedDegree\testVertexNumber\10v-5o-25min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 493.0
+Ford Fulkerson Algorithm: Running time: 0 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 493.0
+Scaling Ford Fulkerson Algorithm: Running time: 0 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 493.0
+Preflow Push Algorithm: Running time: 0 millisecond
+.\src\FixedDegree\testVertexNumber\500v-5o-25min-200max
+Opened .\src\FixedDegree\testVertexNumber\500v-5o-25min-200max for input.
+Successfully loaded 2510 lines. 
+----------------************test for.\src\FixedDegree\testVertexNumber\500v-5o-25min-200max************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 381.0
+Ford Fulkerson Algorithm: Running time: 1801 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 381.0
+Scaling Ford Fulkerson Algorithm: Running time: 1467 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 381.0
+Preflow Push Algorithm: Running time: 199 millisecond
+.\src\FixedDegree\testVertexNumber\50v-5o-25min-200max
+Opened .\src\FixedDegree\testVertexNumber\50v-5o-25min-200max for input.
+Successfully loaded 260 lines. 
+----------------************test for.\src\FixedDegree\testVertexNumber\50v-5o-25min-200max************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 603.0
+Ford Fulkerson Algorithm: Running time: 1 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 603.0
+Scaling Ford Fulkerson Algorithm: Running time: 0 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 603.0
+Preflow Push Algorithm: Running time: 1 millisecond
+.\src\Mesh\testCapacityRange\500v-100min-200max
+Opened .\src\Mesh\testCapacityRange\500v-100min-200max for input.
+Successfully loaded 1530 lines. 
+----------------************test for.\src\Mesh\testCapacityRange\500v-100min-200max************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 9030.0
+Ford Fulkerson Algorithm: Running time: 254 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 9030.0
+Scaling Ford Fulkerson Algorithm: Running time: 1395 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 9030.0
+Preflow Push Algorithm: Running time: 15660 millisecond
+.\src\Mesh\testCapacityRange\500v-150min-200max
+Opened .\src\Mesh\testCapacityRange\500v-150min-200max for input.
+Successfully loaded 1530 lines. 
+----------------************test for.\src\Mesh\testCapacityRange\500v-150min-200max************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 11673.0
+Ford Fulkerson Algorithm: Running time: 246 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 11673.0
+Scaling Ford Fulkerson Algorithm: Running time: 573 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 11673.0
+Preflow Push Algorithm: Running time: 13497 millisecond
+.\src\Mesh\testCapacityRange\500v-199min-200max
+Opened .\src\Mesh\testCapacityRange\500v-199min-200max for input.
+Successfully loaded 1530 lines. 
+----------------************test for.\src\Mesh\testCapacityRange\500v-199min-200max************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 14157.0
+Ford Fulkerson Algorithm: Running time: 300 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 14157.0
+Scaling Ford Fulkerson Algorithm: Running time: 1192 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 14157.0
+Preflow Push Algorithm: Running time: 6970 millisecond
+.\src\Mesh\testCapacityRange\500v-1min-200max
+Opened .\src\Mesh\testCapacityRange\500v-1min-200max for input.
+Successfully loaded 1530 lines. 
+----------------************test for.\src\Mesh\testCapacityRange\500v-1min-200max************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 3676.0
+Ford Fulkerson Algorithm: Running time: 226 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 3676.0
+Scaling Ford Fulkerson Algorithm: Running time: 801 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 3676.0
+Preflow Push Algorithm: Running time: 18614 millisecond
+.\src\Mesh\testCapacityRange\500v-50min-200max
+Opened .\src\Mesh\testCapacityRange\500v-50min-200max for input.
+Successfully loaded 1530 lines. 
+----------------************test for.\src\Mesh\testCapacityRange\500v-50min-200max************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 6329.0
+Ford Fulkerson Algorithm: Running time: 271 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 6329.0
+Scaling Ford Fulkerson Algorithm: Running time: 738 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 6329.0
+Preflow Push Algorithm: Running time: 7674 millisecond
+.\src\Mesh\testVerticesNumber\1000v-25min-200max
+Opened .\src\Mesh\testVerticesNumber\1000v-25min-200max for input.
+Successfully loaded 3080 lines. 
+----------------************test for.\src\Mesh\testVerticesNumber\1000v-25min-200max************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 9877.0
+Ford Fulkerson Algorithm: Running time: 1408 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 9877.0
+Scaling Ford Fulkerson Algorithm: Running time: 5971 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 9877.0
+Preflow Push Algorithm: Running time: 101468 millisecond
+.\src\Mesh\testVerticesNumber\100v-25min-200max
+Opened .\src\Mesh\testVerticesNumber\100v-25min-200max for input.
+Successfully loaded 290 lines. 
+----------------************test for.\src\Mesh\testVerticesNumber\100v-25min-200max************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 579.0
+Ford Fulkerson Algorithm: Running time: 1 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 579.0
+Scaling Ford Fulkerson Algorithm: Running time: 2 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 579.0
+Preflow Push Algorithm: Running time: 53 millisecond
+.\src\Mesh\testVerticesNumber\10v-25min-200max
+Opened .\src\Mesh\testVerticesNumber\10v-25min-200max for input.
+Successfully loaded 11 lines. 
+----------------************test for.\src\Mesh\testVerticesNumber\10v-25min-200max************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 33.0
+Ford Fulkerson Algorithm: Running time: 0 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 0.0
+Scaling Ford Fulkerson Algorithm: Running time: 0 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 33.0
+Preflow Push Algorithm: Running time: 0 millisecond
+.\src\Mesh\testVerticesNumber\500v-25min-200max
+Opened .\src\Mesh\testVerticesNumber\500v-25min-200max for input.
+Successfully loaded 1530 lines. 
+----------------************test for.\src\Mesh\testVerticesNumber\500v-25min-200max************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 4835.0
+Ford Fulkerson Algorithm: Running time: 203 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 4835.0
+Scaling Ford Fulkerson Algorithm: Running time: 631 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 4835.0
+Preflow Push Algorithm: Running time: 5448 millisecond
+.\src\Mesh\testVerticesNumber\50v-25min-200max
+Opened .\src\Mesh\testVerticesNumber\50v-25min-200max for input.
+Successfully loaded 135 lines. 
+----------------************test for.\src\Mesh\testVerticesNumber\50v-25min-200max************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 420.0
+Ford Fulkerson Algorithm: Running time: 0 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 420.0
+Scaling Ford Fulkerson Algorithm: Running time: 0 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 420.0
+Preflow Push Algorithm: Running time: 20 millisecond
+.\src\Random\testCapacityRange\100v-50d-100min-200max.txt
+Opened .\src\Random\testCapacityRange\100v-50d-100min-200max.txt for input.
+Successfully loaded 5013 lines. 
+----------------************test for.\src\Random\testCapacityRange\100v-50d-100min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 7308.0
+Ford Fulkerson Algorithm: Running time: 4327 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 7308.0
+Scaling Ford Fulkerson Algorithm: Running time: 2862 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 7308.0
+Preflow Push Algorithm: Running time: 72 millisecond
+.\src\Random\testCapacityRange\100v-50d-150min-200max.txt
+Opened .\src\Random\testCapacityRange\100v-50d-150min-200max.txt for input.
+Successfully loaded 4877 lines. 
+----------------************test for.\src\Random\testCapacityRange\100v-50d-150min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 7283.0
+Ford Fulkerson Algorithm: Running time: 4262 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 7283.0
+Scaling Ford Fulkerson Algorithm: Running time: 4554 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 7283.0
+Preflow Push Algorithm: Running time: 59 millisecond
+.\src\Random\testCapacityRange\100v-50d-199min-200max.txt
+Opened .\src\Random\testCapacityRange\100v-50d-199min-200max.txt for input.
+Successfully loaded 4922 lines. 
+----------------************test for.\src\Random\testCapacityRange\100v-50d-199min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 10369.0
+Ford Fulkerson Algorithm: Running time: 4708 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 10369.0
+Scaling Ford Fulkerson Algorithm: Running time: 5028 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 10369.0
+Preflow Push Algorithm: Running time: 70 millisecond
+.\src\Random\testCapacityRange\100v-50d-1min-200max.txt
+Opened .\src\Random\testCapacityRange\100v-50d-1min-200max.txt for input.
+Successfully loaded 4814 lines. 
+----------------************test for.\src\Random\testCapacityRange\100v-50d-1min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 4331.0
+Ford Fulkerson Algorithm: Running time: 3007 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 4331.0
+Scaling Ford Fulkerson Algorithm: Running time: 1190 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 4331.0
+Preflow Push Algorithm: Running time: 70 millisecond
+.\src\Random\testCapacityRange\100v-50d-50min-200max.txt
+Opened .\src\Random\testCapacityRange\100v-50d-50min-200max.txt for input.
+Successfully loaded 5004 lines. 
+----------------************test for.\src\Random\testCapacityRange\100v-50d-50min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 5498.0
+Ford Fulkerson Algorithm: Running time: 3200 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 5498.0
+Scaling Ford Fulkerson Algorithm: Running time: 1499 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 5498.0
+Preflow Push Algorithm: Running time: 2240 millisecond
+.\src\Random\testDensity\100v-10d-25min-200max.txt
+Opened .\src\Random\testDensity\100v-10d-25min-200max.txt for input.
+Successfully loaded 991 lines. 
+----------------************test for.\src\Random\testDensity\100v-10d-25min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 1053.0
+Ford Fulkerson Algorithm: Running time: 103 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 1053.0
+Scaling Ford Fulkerson Algorithm: Running time: 42 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 1053.0
+Preflow Push Algorithm: Running time: 11 millisecond
+.\src\Random\testDensity\100v-30d-25min-200max.txt
+Opened .\src\Random\testDensity\100v-30d-25min-200max.txt for input.
+Successfully loaded 2930 lines. 
+----------------************test for.\src\Random\testDensity\100v-30d-25min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 2192.0
+Ford Fulkerson Algorithm: Running time: 1273 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 2192.0
+Scaling Ford Fulkerson Algorithm: Running time: 527 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 2192.0
+Preflow Push Algorithm: Running time: 27 millisecond
+.\src\Random\testDensity\100v-50d-25min-200max.txt
+Opened .\src\Random\testDensity\100v-50d-25min-200max.txt for input.
+Successfully loaded 4934 lines. 
+----------------************test for.\src\Random\testDensity\100v-50d-25min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 4912.0
+Ford Fulkerson Algorithm: Running time: 5132 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 4912.0
+Scaling Ford Fulkerson Algorithm: Running time: 2148 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 4912.0
+Preflow Push Algorithm: Running time: 70 millisecond
+.\src\Random\testDensity\100v-70d-25min-200max.txt
+Opened .\src\Random\testDensity\100v-70d-25min-200max.txt for input.
+Successfully loaded 6854 lines. 
+----------------************test for.\src\Random\testDensity\100v-70d-25min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 7378.0
+Ford Fulkerson Algorithm: Running time: 8605 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 7378.0
+Scaling Ford Fulkerson Algorithm: Running time: 3852 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 7378.0
+Preflow Push Algorithm: Running time: 123 millisecond
+.\src\Random\testDensity\100v-90d-25min-200max.txt
+Opened .\src\Random\testDensity\100v-90d-25min-200max.txt for input.
+Successfully loaded 8824 lines. 
+----------------************test for.\src\Random\testDensity\100v-90d-25min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 9837.0
+Ford Fulkerson Algorithm: Running time: 13785 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 9837.0
+Scaling Ford Fulkerson Algorithm: Running time: 6376 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 9837.0
+Preflow Push Algorithm: Running time: 2250 millisecond
+.\src\Random\testVerticesNumber\100v-20d-25min-200max.txt
+Opened .\src\Random\testVerticesNumber\100v-20d-25min-200max.txt for input.
+Successfully loaded 1930 lines. 
+----------------************test for.\src\Random\testVerticesNumber\100v-20d-25min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 1862.0
+Ford Fulkerson Algorithm: Running time: 565 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 1862.0
+Scaling Ford Fulkerson Algorithm: Running time: 188 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 1862.0
+Preflow Push Algorithm: Running time: 19 millisecond
+.\src\Random\testVerticesNumber\10v-20d-25min-200max.txt
+Opened .\src\Random\testVerticesNumber\10v-20d-25min-200max.txt for input.
+Successfully loaded 15 lines. 
+----------------************test for.\src\Random\testVerticesNumber\10v-20d-25min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 175.0
+Ford Fulkerson Algorithm: Running time: 0 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 175.0
+Scaling Ford Fulkerson Algorithm: Running time: 0 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 175.0
+Preflow Push Algorithm: Running time: 0 millisecond
+.\src\Random\testVerticesNumber\150v-20d-25min-200max.txt
+Opened .\src\Random\testVerticesNumber\150v-20d-25min-200max.txt for input.
+Successfully loaded 4378 lines. 
+----------------************test for.\src\Random\testVerticesNumber\150v-20d-25min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 3806.0
+Ford Fulkerson Algorithm: Running time: 4855 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 3806.0
+Scaling Ford Fulkerson Algorithm: Running time: 2090 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 3806.0
+Preflow Push Algorithm: Running time: 3725 millisecond
+.\src\Random\testVerticesNumber\250v-20d-25min-200max.txt
+Opened .\src\Random\testVerticesNumber\250v-20d-25min-200max.txt for input.
+Successfully loaded 12461 lines. 
+----------------************test for.\src\Random\testVerticesNumber\250v-20d-25min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 4116.0
+Ford Fulkerson Algorithm: Running time: 31290 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 4116.0
+Scaling Ford Fulkerson Algorithm: Running time: 18276 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 4116.0
+Preflow Push Algorithm: Running time: 261 millisecond
+.\src\Random\testVerticesNumber\50v-20d-25min-200max.txt
+Opened .\src\Random\testVerticesNumber\50v-20d-25min-200max.txt for input.
+Successfully loaded 497 lines. 
+----------------************test for.\src\Random\testVerticesNumber\50v-20d-25min-200max.txt************----------------
+->Test for Ford Fulkerson Algorithm
+Ford Fulkerson Algorithm: Max flow: 874.0
+Ford Fulkerson Algorithm: Running time: 6 millisecond
+->Test for Scaling Ford Fulkerson Algorithm
+Scaling Ford Fulkerson Algorithm: Max flow: 874.0
+Scaling Ford Fulkerson Algorithm: Running time: 2 millisecond
+->Test for Preflow Push Algorithm
+Preflow Push Algorithm: Max flow: 874.0
+Preflow Push Algorithm: Running time: 2 millisecond
